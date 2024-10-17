@@ -22,6 +22,21 @@
         app:layout_constraintVertical_bias="0.15"
         tools:ignore="HardcodedText" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/upload_csv_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_agl_btn">
+
+    <VideoView
+        android:id="@+id/video_viewer"
+        android:layout_width="411dp"
+        android:layout_height="475dp" />
+
+    </FrameLayout>
+
     <Button
         android:id="@+id/upload_csv_btn"
         android:layout_width="wrap_content"
