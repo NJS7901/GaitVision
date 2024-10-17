@@ -1,11 +1,11 @@
 package GaitVision.com
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
-import android.net.Uri
-import android.widget.MediaController
 import android.widget.VideoView
+import android.widget.MediaController
 import androidx.activity.ComponentActivity
 
 class SecondActivity : ComponentActivity() {
