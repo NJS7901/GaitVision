@@ -34,18 +34,17 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        val confirmVidBtn = findViewById<Button>(R.id.confirm_vid_btn)
-//        confirmVidBtn.setOnClickListener{
-//            val intent = Intent(this, SecondActivity::class.java)
-//            startActivity(intent)
-//        }
+
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        //mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mBinding.confirmVidBtn.setOnClickListener{startActivity(Intent(this,SecondActivity::class.java))}
         mBinding.openGalBtn.setOnClickListener{startIntentFromGallary()}
+
+        val camActivityButton = findViewById<Button>(R.id.take_vid_btn)
+        camActivityButton.setOnClickListener({
+          val Intent = Intent(this,cameraActivity::class.java)
+            startActivity(Intent)
+        })
     }
 
     private fun initClicks()
@@ -59,20 +58,5 @@ class MainActivity : ComponentActivity() {
        getResult.launch("video/*")
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
-//    {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//            if(requestCode == REQUESTCODE_GALLERY && resultCode == Activity.RESULT_OK)
-//            {
-//                videoUri = data?.data
-//
-//                val intent= Intent(this, SecondActivity::class.java).apply{
-//                    putExtra("VIDEO_URI", videoUri.toString())
-//                }
-//                startActivity(intent)
-//            }
-//
-//
-//    }
+
 }
