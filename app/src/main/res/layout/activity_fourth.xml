@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/FourthActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FourthActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_variablefont_wght"
-        android:text="You made it"
-        android:textColor="@color/black"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageButton
+        android:id="@+id/captureIB"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
+        android:src= "@drawable/play_24"
+        app:tint="@color/white"
+        />
+
+    <ImageButton
+        android:id="@+id/flashToggleIB"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
+        android:src= "@drawable/bulb_24"
+        app:tint="@color/white"
+        />
+
+
+</RelativeLayout>
