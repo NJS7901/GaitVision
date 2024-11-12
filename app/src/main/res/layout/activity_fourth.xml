@@ -11,8 +11,7 @@
         android:id="@+id/previewView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerInParent="true" />
 
     <ImageButton
         android:id="@+id/captureIB"
@@ -23,34 +22,32 @@
         android:layout_centerHorizontal="true"
         android:background="?attr/selectableItemBackground"
         android:scaleType="centerCrop"
-        android:src= "@drawable/play_24"
-        app:tint="@color/white"
-        />
+        android:src="@drawable/play_24"
+        app:tint="@color/white" />
 
     <ImageButton
         android:id="@+id/flashToggleIB"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
         android:background="?attr/selectableItemBackground"
         android:scaleType="centerCrop"
-        android:src= "@drawable/bulb_24"
-        app:tint="@color/white"
-        />
+        android:src="@drawable/bulb_24"
+        app:tint="@color/white" />
 
     <ImageButton
         android:id="@+id/flipCameraIB"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_below="@id/flashToggleIB"
+        android:layout_marginTop="10dp"
         android:background="?attr/selectableItemBackground"
         android:scaleType="centerCrop"
-        android:src= "@drawable/flip"
-        app:tint="@color/white"
-        />
-
+        android:src="@drawable/flip"
+        app:tint="@color/white" />
 
 </RelativeLayout>
