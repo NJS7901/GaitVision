@@ -29,13 +29,26 @@
 
     <ImageButton
         android:id="@+id/flashToggleIB"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="10dp"
         android:background="?attr/selectableItemBackground"
         android:scaleType="centerCrop"
         android:src= "@drawable/bulb_24"
+        app:tint="@color/white"
+        />
+
+    <ImageButton
+        android:id="@+id/flipCameraIB"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/flashToggleIB"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="centerCrop"
+        android:src= "@drawable/flip"
         app:tint="@color/white"
         />
 
