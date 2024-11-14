@@ -26,4 +26,5 @@ fun GetAngles(x1: Float,y1: Float, x2: Float, y2: Float, x3: Float, y3: Float): 
     //Might change later
     val smallerAngle: Float = 180f - Angle
     return String.format("%.2f", smallerAngle).toFloat() //round to 2 decimal places
+    //
 }
