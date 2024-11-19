@@ -180,7 +180,9 @@ class FourthActivity : AppCompatActivity() {
     }
 
     private fun takePhoto() {
-        val imageFolder = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Images")
+        val imageFolder = File(
+            Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), "Images")
         if (!imageFolder.exists()) {
             imageFolder.mkdir()
         }
