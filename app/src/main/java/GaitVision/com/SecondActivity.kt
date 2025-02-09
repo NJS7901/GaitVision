@@ -392,6 +392,81 @@ class SecondActivity : ComponentActivity() {
                                         "all"
                                     )
                                 }
+                                Log.d("ErrorCheck","VideoSize: ${frameList.size}")
+                                Log.d("ErrorCheck","LeftKneeListSize: ${leftKneeAngles.size}")
+                                Log.d("ErrorCheck","RightKneeListSize: ${rightKneeAngles.size}")
+                                Log.d("ErrorCheck","LeftAnkleListSize: ${leftAnkleAngles.size}")
+                                Log.d("ErrorCheck","RightAnkleListSize: ${rightAnkleAngles.size}")
+                                Log.d("ErrorCheck","LeftHipListSize: ${leftHipAngles.size}")
+                                Log.d("ErrorCheck","RightHipListSize: ${rightHipAngles.size}")
+                                Log.d("ErrorCheck","TorsoListSize: ${torsoAngles.size}")
+                                Log.d("ErrorCheck","Count: $count")
+                                Log.d("ErrorCheck","Coms: ${centerOfMasses}")
+
+
+                                // Log check to see example of mutable list
+                                Log.d("MutableListContents", "leftKneeAngles after processing: $leftKneeAngles")
+                                Log.d("MutableListContents", "rightKneeAngles after processing: $rightKneeAngles")
+                                val LeftHipMin = FindLocalMin(leftHipAngles)
+                                val LeftHipMax = FindLocalMax(leftHipAngles)
+                                Log.d("ErrorCheck", "Left Hip Min: $LeftHipMin, Max: $LeftHipMax")
+
+                                val RightHipMin = FindLocalMin(rightHipAngles)
+                                val RightHipMax = FindLocalMax(rightHipAngles)
+                                Log.d("ErrorCheck", "Right Hip Min: $RightHipMin, Max: $RightHipMax")
+
+                                Log.d("ErrorCheck","---------------")
+                                val LeftAnkleMin = FindLocalMin(leftAnkleAngles)
+                                val LeftAnkleMax = FindLocalMax(leftAnkleAngles)
+                                Log.d("ErrorCheck", "Left Ankle Min: $LeftAnkleMin, Max: $LeftAnkleMax")
+
+                                val RightAnkleMin = FindLocalMin(rightAnkleAngles)
+                                val RightAnkleMax = FindLocalMax(rightAnkleAngles)
+                                Log.d("ErrorCheck", "Right Ankle Min: $RightAnkleMin, Max: $RightAnkleMax")
+// Log check to see Local Min/Max
+                                val LeftKneeMin = FindLocalMin(leftKneeAngles)
+                                val LeftKneeMax = FindLocalMax(leftKneeAngles)
+                                Log.d("ErrorCheck", "Left Knee Min: $LeftKneeMin, Max: $LeftKneeMax")
+
+                                val RightKneeMin = FindLocalMin(rightKneeAngles)
+                                val RightKneeMax = FindLocalMax(rightKneeAngles)
+                                Log.d("ErrorCheck", "Right Knee Min: $RightKneeMin, Max: $RightKneeMax")
+
+                                val TorsoMin = FindLocalMin(torsoAngles)
+                                val TorsoMax = FindLocalMax(torsoAngles)
+                                Log.d("ErrorCheck", "Torso Min: $TorsoMin, Max: $TorsoMax")
+                                val stanceTimesL = calculateStanceTimes(leftAnkleAngles)
+                                val avgStanceTimeL = averageStanceTime(stanceTimesL)
+
+                                val swingTimesL = calculateSwingTimes(leftAnkleAngles)
+                                val avgSwingTimeL = averageSwingTime(swingTimesL)
+                                Log.d("ErrorCheck","Average Swing Time Left(s): $avgSwingTimeL seconds")
+                                val swingTimesR = calculateSwingTimes(rightAnkleAngles)
+                                val avgSwingTimeR = averageSwingTime(swingTimesR)
+                                Log.d("ErrorCheck","Average Swing Time Right(s): $avgSwingTimeR seconds")
+                                Log.d("ErrorCheck","Left Step Time(s): $avgStanceTimeL seconds")
+                                val stanceTimesR = calculateStanceTimes(rightAnkleAngles)
+                                val avgStanceTimeR = averageStanceTime(stanceTimesR)
+                                Log.d("ErrorCheck","Right Step Time(s): $avgStanceTimeR seconds")
+                                Log.d("ErrorCheck","Swing-Stance Ratio Left: ${calculateSwingStanceRatio(avgSwingTimeL,avgStanceTimeL)}")
+                                Log.d("ErrorCheck","Swing-Stance Ratio Right: ${calculateSwingStanceRatio(avgSwingTimeR,avgStanceTimeR)}")
+
+                                var sum = calcStrideLength(70f) // Change height here to ur height in inches
+                                var strideSpeedAvg = sum / (videoLength * 0.000001)
+
+                                Log.d("ErrorCheck", "Stride Speed AVG(In/s): ${strideSpeedAvg}")
+                                Log.d("ErrorCheck", "Stride Length AVG(In): ${calcStrideLengthAvg(70f)}") // Change height here to ur height in inches
+                                Log.d("ErrorCheck","---------------")
+                                Log.d("ErrorCheck","Stride Angles: ${FindLocalMax(strideAngles)}")
+                                Log.d("ErrorCheck","Lowest Ankle Left Placements: ${minLeftAnkleY.max()}")
+                                Log.d("ErrorCheck","Lowest Ankle Right Placements: ${minRightAnkleY.max()}")
+
+                                Log.d("ErrorCheck","Stance Times Left(s): ${calculateStanceTimes(leftAnkleAngles)}")
+                                Log.d("ErrorCheck","Stance Times Right(s): ${calculateStanceTimes(rightAnkleAngles)}")
+                                Log.d("ErrorCheck","Swing Times Left(s): ${calculateSwingTimes(leftAnkleAngles)}")
+                                Log.d("ErrorCheck","Swing Times Right(s): ${calculateSwingTimes(rightAnkleAngles)}")
+
+
                             }
                             else
                             {
