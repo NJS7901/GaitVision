@@ -9,7 +9,6 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        maven(url="https://chaquo.com/maven/")
     }
 }
 dependencyResolutionManagement {
